@@ -1,6 +1,6 @@
 # cse210-student-template
 Dallin Stephens
-CSE 210
+CSE 210 Programming with Classes
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
