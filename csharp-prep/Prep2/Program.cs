@@ -32,6 +32,18 @@ class Program
         else 
         {
             Console.Write("The percentage you entered is invalid. Please try again.");
-        }                               
+        }
+
+        if (gradePercentageInteger >=70)
+        {
+            Console.Write("\nCongratulations! You passed the course.");
+        }
+        else if (gradePercentageInteger < 70)
+        {
+            Console.Write("\nSorry, you did not pass the course. Keep trying though and you'll get it!");
+        }
+        else
+        {         
+        }
     }
 }
