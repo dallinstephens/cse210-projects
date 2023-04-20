@@ -2,39 +2,51 @@ using System;
 
 class Program
 {
+
     static void Main(string[] args)
     {
         Console.Write("What is your grade percentage: ");
         string gradePercentageString = Console.ReadLine();
 
         int gradePercentageInteger = int.Parse(gradePercentageString);
-        
+
+        // "The variable letter is initially assigned to keep the program from crashing.
+        string letter = "";
+
         if (gradePercentageInteger >= 90)
         {
-            Console.Write("Letter Grade: A");
+            letter = "A";
         }
         else if (gradePercentageInteger >= 80)
         {
-            Console.Write("Letter Grade: B");
+            letter = "B";
         }
         else if (gradePercentageInteger >= 70)
         {
-            Console.Write("Letter Grade: C");
+            letter = "C";
         }
         else if (gradePercentageInteger >= 60)
         {
-            Console.Write("Letter Grade: D");
+            letter = "D";
         }
         else if (gradePercentageInteger >= 0 && gradePercentageInteger < 60)
         {
-            Console.Write("Letter Grade: F");
+            letter = "F";
         }
         else 
         {
             Console.Write("The percentage you entered is invalid. Please try again.");
         }
 
-        if (gradePercentageInteger >=70)
+        if (gradePercentageInteger >= 0 && gradePercentageInteger <= 120)
+        {
+            Console.Write($"Letter Grade: {letter}");
+        }
+        else
+        {
+        }
+
+        if (gradePercentageInteger >= 70)
         {
             Console.Write("\nCongratulations! You passed the course.");
         }
