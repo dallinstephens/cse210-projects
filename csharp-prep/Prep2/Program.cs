@@ -37,10 +37,29 @@ class Program
         {
             Console.Write("The percentage you entered is invalid. Please try again.");
         }
+        // Reference on operator modulus "%" to find the remainder: https://www.w3schools.com/cs/cs_operators.php
+        // The variable lastDigit is the remainder to figure out if the sign if the letter grade is +, -, or nothing.
+        int lastDigit = gradePercentageInteger % 10;
+
+        // The variable sign is assigned initially to prevent program crash.
+        string sign = "";
+
+        if (lastDigit >= 7)
+        {
+            sign = "+";
+        }
+        else if (lastDigit < 3)
+        {
+            sign = "-";
+        }
+        else
+        {
+            sign = "";
+        }
 
         if (gradePercentageInteger >= 0 && gradePercentageInteger <= 120)
         {
-            Console.Write($"Letter Grade: {letter}");
+            Console.Write($"Letter Grade: {letter}{sign}");
         }
         else
         {
