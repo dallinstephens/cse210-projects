@@ -44,8 +44,8 @@ class Program
         // The variable sign is assigned initially to prevent program crash.
         string sign = "";
 
-        // This if statement is so that there is no "A+" grade, just "A".
-        if (gradePercentageInteger >= 97)
+        // This if statement is so that there is no "A+" grade, just "A" and that there is no "F+" or "F-", just "F".
+        if (gradePercentageInteger >= 97 || gradePercentageInteger < 60)
         {
             sign = "";
         } 
