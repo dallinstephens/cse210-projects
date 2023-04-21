@@ -44,7 +44,12 @@ class Program
         // The variable sign is assigned initially to prevent program crash.
         string sign = "";
 
-        if (lastDigit >= 7)
+        // This if statement is so that there is no "A+" grade, just "A".
+        if (gradePercentageInteger >= 97)
+        {
+            sign = "";
+        } 
+        else if (lastDigit >= 7)
         {
             sign = "+";
         }
