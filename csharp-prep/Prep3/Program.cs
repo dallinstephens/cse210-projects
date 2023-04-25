@@ -4,19 +4,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Random randomGenerator = new Random();
-        // int number = randomGenerator.Next(1,11);
-        Console.Write("What is the magic number? ");
-        string answer1 = Console.ReadLine();
-        int magicNumber = int.Parse(answer1);
+        // Reference: https://www.w3schools.blog/c-random-number
+        // These 2 lines below creates a number between 1 and 100. 
+        // It can create the number "1" or "100", but not "101".
+        Random randomGenerator = new Random();
+        int magicNumber = randomGenerator.Next(1,101);
 
         int guess;
 
         do 
         {
             Console.Write("What is your guess? ");
-            string answer2 = Console.ReadLine();
-            guess = int.Parse(answer2);
+            string answer = Console.ReadLine();
+            guess = int.Parse(answer);
 
             if (guess < magicNumber)
             {
