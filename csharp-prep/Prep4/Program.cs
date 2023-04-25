@@ -5,22 +5,24 @@ class Program
 {
     static void Main(string[] args)
     {
-        // "List<int> numbers" declares a variable to hold the list.
-        // "numbers = new List<int>()" is needed to use the list.
-        List<int> numbers = new List<int>();
+        // Reference for using decimal instead of float or int: 
+        // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types
+        // "List<decimal> numbers" declares a variable to hold the list.
+        // "numbers = new List<decimal>()" is needed to use the list.
+        List<decimal> numbers = new List<decimal>();
 
         Console.WriteLine("Enter a list of numbers, type 0 when finished.");
 
-        int number;
+        decimal number;
 
         // The variable sum is set to 0 initially.
-        int sum = 0;
+        decimal sum = 0;
 
         do
         {
             Console.Write("Enter number: ");
-            // "int.Parse()" is needed because Console.ReadLine is always a string.
-            number = int.Parse(Console.ReadLine());
+            // "decimal.Parse()" is needed because Console.ReadLine is always a string.
+            number = decimal.Parse(Console.ReadLine());
 
             // Adds the number the user entered to the list called numbers.
             numbers.Add(number);
@@ -28,7 +30,17 @@ class Program
             sum += number;
         } while (number != 0);
 
-        Console.Write($"The sum is: {sum}");
+        Console.WriteLine($"The sum is: {sum}");
+
+        // Reference: https://www.techiedelight.com/remove-last-element-from-a-list-in-csharp/
+        // Remove "0" from the list called numbers which is the last number in the list.
+        // RemoveAt(index) - removes the element at the specificied index.
+        // The index of the last element in the list is "numbers.Count - 1" where numbers.Count
+        // is the current number of elements in the list. 
+        numbers.RemoveAt(numbers.Count - 1);
+
+        decimal avg = sum / numbers.Count;
+        Console.Write($"The average is: {avg}");
     }
 }
 
