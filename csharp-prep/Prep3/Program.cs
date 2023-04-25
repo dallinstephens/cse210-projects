@@ -12,6 +12,9 @@ class Program
 
         int guess;
 
+        // The variable "n" is the number of guesses the user has made.
+        int n = 0;    
+
         do 
         {
             Console.Write("What is your guess? ");
@@ -28,9 +31,13 @@ class Program
             }
             else
             {
-                Console.Write("You guessed it!");
+                Console.WriteLine("You guessed it!");
             }
+            // The variable "n" is the number of guesses the user has made.
+            // n += 1 is the same as n =  n + 1.
+            n += 1;
         } while (guess != magicNumber);
+        Console.Write($"It took you {n} guess(es).");
     }
 }
 
