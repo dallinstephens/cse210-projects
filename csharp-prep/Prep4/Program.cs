@@ -5,49 +5,39 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Reference for using decimal instead of float or int: 
+        // Reference for using int instead of float or int: 
         // https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types
-        // "List<decimal> numbers" declares a variable to hold the list.
-        // "numbers = new List<decimal>()" is needed to use the list.
-        List<decimal> numbers = new List<decimal>();
+        // "List<int> numbers" declares a variable to hold the list.
+        // "numbers = new List<int>()" is needed to use the list.
+        List<int> numbers = new List<int>();
 
         Console.WriteLine("Enter a list of numbers, type 0 when finished.");
 
-        decimal number;
-
-        // The variable sum is set to 0 initially.
-        decimal sum = 0;
-
-        // The variable largestNumber is set to 0 initially.
-        decimal largestNumber = 0;
-
-        // The variable smallestPositiveNumber is set to a very large number initially;
-        decimal smallestPositiveNumber = 10000000000000000;
+        int number;
 
         do
         {
             Console.Write("Enter number: ");
-            // "decimal.Parse()" is needed because Console.ReadLine is always a string.
-            number = decimal.Parse(Console.ReadLine());
+            // "int.Parse()" is needed because Console.ReadLine is always a string.
+            number = int.Parse(Console.ReadLine());
 
             // Adds the number the user entered to the list called numbers.
-            numbers.Add(number);
-
-            // sum = sum + number
-            sum += number;
-
-            // Find the largest number in the list.
-            if (largestNumber < number)
+            // If the number entered by the user is 0, do not add it to the list.
+            if (number != 0)
             {
-                largestNumber = number;
-            }
-
-            // Find the smallest positive number in the list.
-            if (number > 0 && smallestPositiveNumber > number)
-            {
-                smallestPositiveNumber = number;
+                numbers.Add(number);
             }
         } while (number != 0);
+
+        // COMPUTE THE SUM.
+        // The variable sum is set to 0 initially
+        int sum = 0;
+
+        foreach (int num in numbers)
+        {
+            // sum = sum + num
+            sum += num;
+        }
 
         Console.WriteLine($"The sum is: {sum}");
 
@@ -55,13 +45,38 @@ class Program
         // Remove "0" from the list called numbers which is the last number in the list.
         // RemoveAt(index) - removes the element at the specificied index.
         // The index of the last element in the list is "numbers.Count - 1" where numbers.Count
-        // is the current number of elements in the list. 
-        numbers.RemoveAt(numbers.Count - 1);
+        // is the current number of elements in the list.
+        // Line below is no longer needed because 0 is not addeded to the list (see above). 
+        // numbers.RemoveAt(numbers.Count - 1);
 
-        decimal avg = sum / numbers.Count;
+        // COMPUTE THE AVERAGE.
+        // (float)sum is needed so that a decimal will be computed.
+        float avg = (float)sum / numbers.Count;
         Console.WriteLine($"The average is: {avg}");
 
+        // FIND THE LARGEST NUMBER IN THE LIST.
+        int largestNumber = numbers[0];
+
+        foreach (int num in numbers)
+        {
+            if (largestNumber < num)
+            {
+                largestNumber = num;
+            }
+        }
+
         Console.WriteLine($"The largest number is: {largestNumber}");
+
+        // FIND THE SMALLEST NUMBER IN THE LIST.
+        int smallestPositiveNumber = numbers[0];
+
+        foreach (int num in numbers)
+        {
+            if (num > 0 && smallestPositiveNumber > num)
+            {
+                smallestPositiveNumber = num;
+            }
+        }     
 
         Console.WriteLine($"The smallest positive number is: {smallestPositiveNumber}");
 
@@ -71,7 +86,7 @@ class Program
 
         Console.WriteLine("The sorted list is:");
 
-        foreach (decimal num in numbers)
+        foreach (int num in numbers)
         {
             Console.WriteLine(num);
         }
