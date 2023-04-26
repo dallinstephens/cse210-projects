@@ -63,7 +63,18 @@ class Program
 
         Console.WriteLine($"The largest number is: {largestNumber}");
 
-        Console.Write($"The smallest positive number is: {smallestPositiveNumber}");
+        Console.WriteLine($"The smallest positive number is: {smallestPositiveNumber}");
+
+        // Reference: https://www.c-sharpcorner.com/UploadFile/mahesh/how-to-sort-a-C-Sharp-list-items/
+        // Sort the numbers in the list and display the new, sorted list.
+        numbers.Sort();
+
+        Console.WriteLine("The sorted list is:");
+
+        foreach (decimal num in numbers)
+        {
+            Console.WriteLine(num);
+        }
     }
 }
 
