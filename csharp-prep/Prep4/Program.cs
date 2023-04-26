@@ -94,3 +94,5 @@ class Program
 }
 
 // Reference: https://byui-cse.github.io/cse210-course-2023/unit01/csharp-4.html
+// Solution Reference that helped me come up with this newer version: 
+// https://github.com/byui-cse/cse210-student-sample-solutions/blob/main/csharp-prep/Prep4/Program.cs 
