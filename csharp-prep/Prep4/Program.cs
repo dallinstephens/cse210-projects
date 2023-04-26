@@ -18,6 +18,9 @@ class Program
         // The variable sum is set to 0 initially.
         decimal sum = 0;
 
+        // The variable largest number is set to 0 initially.
+        decimal largestNumber = 0;
+
         do
         {
             Console.Write("Enter number: ");
@@ -26,8 +29,15 @@ class Program
 
             // Adds the number the user entered to the list called numbers.
             numbers.Add(number);
+
             // sum = sum + number
             sum += number;
+
+            // Find the largest number in the list.
+            if (largestNumber < number)
+            {
+                largestNumber = number;
+            }
         } while (number != 0);
 
         Console.WriteLine($"The sum is: {sum}");
@@ -40,7 +50,9 @@ class Program
         numbers.RemoveAt(numbers.Count - 1);
 
         decimal avg = sum / numbers.Count;
-        Console.Write($"The average is: {avg}");
+        Console.WriteLine($"The average is: {avg}");
+
+        Console.Write($"The largest number is: {largestNumber}");
     }
 }
 
