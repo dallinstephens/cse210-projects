@@ -18,8 +18,11 @@ class Program
         // The variable sum is set to 0 initially.
         decimal sum = 0;
 
-        // The variable largest number is set to 0 initially.
+        // The variable largestNumber is set to 0 initially.
         decimal largestNumber = 0;
+
+        // The variable smallestPositiveNumber is set to a very large number initially;
+        decimal smallestPositiveNumber = 10000000000000000;
 
         do
         {
@@ -38,6 +41,12 @@ class Program
             {
                 largestNumber = number;
             }
+
+            // Find the smallest positive number in the list.
+            if (number > 0 && smallestPositiveNumber > number)
+            {
+                smallestPositiveNumber = number;
+            }
         } while (number != 0);
 
         Console.WriteLine($"The sum is: {sum}");
@@ -52,7 +61,9 @@ class Program
         decimal avg = sum / numbers.Count;
         Console.WriteLine($"The average is: {avg}");
 
-        Console.Write($"The largest number is: {largestNumber}");
+        Console.WriteLine($"The largest number is: {largestNumber}");
+
+        Console.Write($"The smallest positive number is: {smallestPositiveNumber}");
     }
 }
 
