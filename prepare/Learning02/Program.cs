@@ -19,3 +19,5 @@ class Program
         job2.DisplayJobInformation();
     }
 }
+
+// Reference: https://byui-cse.github.io/cse210-course-2023/unit02/prepare.html
