@@ -12,8 +12,8 @@ public class Job
     {
     }
 
-    // A method that displays the 
-    public void DisplayJobDetails()
+    // A method that displays the job information.
+    public void DisplayJobInformation()
     {
         Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
     }
