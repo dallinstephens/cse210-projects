@@ -1,3 +1,5 @@
+using System;
+
 public class Job
 {
     // The C# convention is to start member variables with an underscore _
